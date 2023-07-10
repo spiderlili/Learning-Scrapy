@@ -27,7 +27,12 @@ websites to scrape:
 - https://www.onthemarket.com/for-sale/flats-apartments/goodge-street-station/?auction=false&max-bedrooms=3&max-price=500000&min-bedrooms=2&min-price=250000&retirement=false&shared-ownership=false&travel-duration=60&travel-type=public-transport
 
 1. in spiders folder: run scrapy genspider spidername scraperwebsiteurl
-2. 
+2. it will auto-generate a name so that you can do Scrapy crawl to kick the spider off with that name; allowed_domains is important for crawling as it lists only the domain you want the spider to scrape & preventing the spider from scraping the entire internet; start_urls is the first URL that the spider starts scraping.
+3. it will auto-generate a parse function that gets called once the response comes back: fill it with all the pieces you want to extract the data from the page.
+4. Use the Scrapy shell to find the CSS selectors you want to get the data from the page: open developer tools via Inspect > elements to see all the HTML & CSS that make up the page. Pick out the tags so Scrapy knows which pieces of data to extract.
+5. pip install ipython: load a different shell in terminal to make it easier to read. Go to scrapy.cfg & add "shell = ipython" as a separate line under [settings]
+6. run scrapy shell to see a list of the available commmands: fetch('url'), response.css('csstag.classname')
+7. run response.status to check if the status is ok (should be 200), if getting [403](https://doc.scrapy.org/en/latest/topics/practices.html#avoiding-getting-banned) this could be anti-scraping measure implemented by the site
 
 ## Crawling logic
 Crawl all the pages using your browser as the user agent (Developer Tools > Network): Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
