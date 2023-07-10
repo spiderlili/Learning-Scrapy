@@ -16,17 +16,18 @@ class UkpropertyscraperSpider(scrapy.Spider):
     }
 
     headers = {
-        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
     }
 
     def start_requests(self):
         url = 'https://www.onthemarket.com/for-sale/property/london/'
-        
+        # https://www.onthemarket.com/for-sale/flats-apartments/goodge-street-station/?auction=false&max-bedrooms=3&max-price=500000&min-bedrooms=2&min-price=250000&retirement=false&shared-ownership=false&travel-duration=60&travel-type=public-transport
         for page in range(0, 4):
             next_page = url + '?page=' + str(page)
             yield scrapy.Request(url=next_page, headers=self.headers, callback=self.parse)    
 
     def parse(self, response):
+        self.log('status: ' + str(response.status))
         # extract data
         for card in response.css('li.property-result'):
             items = {
