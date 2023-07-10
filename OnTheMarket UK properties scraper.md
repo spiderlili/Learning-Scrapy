@@ -11,14 +11,23 @@
 5. Install IDE 
 
 ### Visual Studio Code venv setup
-pip install virtualenv
+1. pip install virtualenv
+2. cd folderPath
+3. python3 -m venv venvprojectfolder
+4. activate virtual environment so that any third-party package installed after this will also be installed into project_env folder: source venvprojectfolder/bin/activate
+5. pip install Scrapy
 
-python3 -m venv project_env
+### Scrapy project setup
+1. open project folder in terminal
+2. scrapy startproject projectName: generate basic project which contains an essential _spiders_ folder & optional items.py, middlewares.py, pipelines.py, settings.py. if scraping anything > 1 page it becomes a lot easier to use middlewares.py & pipelines.py instead of having everything custom-made in spider
 
+## Define Spider class
+websites to scrape: 
+- https://www.onthemarket.com/for-sale/property/goodge-street-station/
+- https://www.onthemarket.com/for-sale/flats-apartments/goodge-street-station/?auction=false&max-bedrooms=3&max-price=500000&min-bedrooms=2&min-price=250000&retirement=false&shared-ownership=false&travel-duration=60&travel-type=public-transport
 
-
-
-## Spider class
+1. in spideres folder: run scrapy genspider spidername scraperwebsiteurl
+2. 
 
 ## Crawling logic
 
