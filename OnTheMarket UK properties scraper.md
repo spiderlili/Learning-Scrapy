@@ -57,6 +57,14 @@ This is not enough to fool large websites: use a fake user agent API
   
 ### using request headers to bypass getting blocked
 
+## Rotating Proxies & Proxy APIs
+
+## Run Spiders in Cloud with Scrapyd
+
+## Run Spiders in Cloud with ScrapeOps
+
+## Run Spiders in Cloud with Scrapy Cloud
+
 ## Crawling logic
 Crawl all the pages using your browser as the user agent (Developer Tools > Network): Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 
