@@ -1,2 +1,2 @@
 # Learning-Scrapy
-UK properties scraper to help with decision making (moving home)
+UK properties Python web scraper to help with decision making (moving home) 
