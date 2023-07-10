@@ -48,6 +48,13 @@ websites to scrape:
 - For complicated sites: they'll look at everything in the request headers, they'll want everything to be different. They might throw a captcha page & if that captcha is not solved then the requests are blocked. You need to change the entirety of the request headers rather than just the user-agent
 
 ### Using user agents to bypass getting blocked
+Goal: implement different user agents every time in spider, get multiple different user agents & insert them into spider using middlewares, do the same for request headers
+1. Go to settings.py & set USER_AGENT. It doesn't make sense to set it to the same user_agent every time here because after 10 - 20 requests the website will say "this is the same person every time, they're making a lot of requests - they're probably web scraping" and ask for captcha blockers
+2. Create a list & rotate through the list
+3. add user agent into every single request you make. 
+
+This is not enough to fool large websites: use a fake user agent API 
+  
 ### using request headers to bypass getting blocked
 
 ## Crawling logic
