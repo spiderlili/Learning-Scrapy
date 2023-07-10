@@ -26,12 +26,14 @@ websites to scrape:
 - https://www.onthemarket.com/for-sale/property/goodge-street-station/
 - https://www.onthemarket.com/for-sale/flats-apartments/goodge-street-station/?auction=false&max-bedrooms=3&max-price=500000&min-bedrooms=2&min-price=250000&retirement=false&shared-ownership=false&travel-duration=60&travel-type=public-transport
 
-1. in spideres folder: run scrapy genspider spidername scraperwebsiteurl
+1. in spiders folder: run scrapy genspider spidername scraperwebsiteurl
 2. 
 
 ## Crawling logic
+Crawl all the pages using your browser as the user agent (Developer Tools > Network): Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 
 ## Making Custom Requests
+Create a start_requests(self) function
 
 ## Debugging
 
