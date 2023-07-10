@@ -6,9 +6,17 @@
 ## Prerequisites
 1. Install Python, check python --version
 2. Install Pip (package manager for Python), check pip --version
-3. Setup virtual environment to add project specific third-party modules: vnv comes with Python 3.3, otherwise you need to install manually
+3. Setup virtual environment to add project specific third-party modules: vnv comes with Python 3.3, otherwise you need to install manually. 
 4. Install Scrapy
 5. Install IDE 
+
+### Visual Studio Code venv setup
+pip install virtualenv
+
+python3 -m venv project_env
+
+
+
 
 ## Spider class
 
