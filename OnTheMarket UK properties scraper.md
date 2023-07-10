@@ -34,6 +34,22 @@ websites to scrape:
 6. run scrapy shell to see a list of the available commmands: fetch('url'), response.css('csstag.classname')
 7. run response.status to check if the status is ok (should be 200), if getting [403](https://doc.scrapy.org/en/latest/topics/practices.html#avoiding-getting-banned) this could be anti-scraping measure implemented by the site
 
+## Fake User-Agents & Browser headers
+1. Developer tools > Network > Doc: check Preview & Response, this is what you end up scraping when using Scrapy.
+2. Check Headers > General to see everything that's sent when you request this page: request url, request method, status code 
+3. IMPORTANT: Request headers is everything you send when you make a request to the url, user-agent gives all the important info about who you are to the server that you're requesting the web page from. Paste the user-agent string into [useragentstring.com](https://useragentstring.com/) for data analysis. This is fine when browing the web but if you're doing any large-scale scraping on commercial sites you're likely to get blocked by anti-bots. 
+
+### Why we get blocked when web scraping
+- Commercial sites want to protect their data & only make it available to customers: check terms & conditions for legal purposes of scraping
+- Generally if it's publicly available & you don't have to log in then it's usually ok to scrape the data
+- Anti-bots look at the IP address of your machine in order to block requests: they might set something in your cookies in your session so they know it's you coming back every time
+- Difference between headers & user agents: headers is everything under Network > Developer Tools > Doc > Headers, it encompasses accepted responses that are returned, accept-language, accept-encoding; user-agent is just a subset of the overall request
+- For some sites that are not too complex: if you change the user-agent each time you make a request the website will think it's a different browser & a different computer looking for the data every time so it'll let the request go through.
+- For complicated sites: they'll look at everything in the request headers, they'll want everything to be different. They might throw a captcha page & if that captcha is not solved then the requests are blocked. You need to change the entirety of the request headers rather than just the user-agent
+
+### Using user agents to bypass getting blocked
+### using request headers to bypass getting blocked
+
 ## Crawling logic
 Crawl all the pages using your browser as the user agent (Developer Tools > Network): Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
 
