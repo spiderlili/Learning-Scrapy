@@ -1,6 +1,7 @@
 # OnTheMarket UK properties using Python Scraper framework
 - Extract title, address, description, price, image URL, contact details (email / phone number)
-- Filter through the properties on onthemarket & sort by square metre (in text full description or use Optical Character Recognition in floorpan)
+- Filter through the properties on onthemarket & sort by sq m / sq ft (in text full description or use Optical Character Recognition in floorpan), years remaining on the lease.
+- Don't show: shared ownership, auction, retirement homes
 
 ## Prerequisites
 1. Install Python, check python --version
